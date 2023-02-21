@@ -2,7 +2,20 @@
     <div class="d-flex page__box p-3 mt-2" >
       <div class="contt">
          <div class="cards">
-        <div class="cardi">
+
+          <div class="cardi">
+            <div class="box" style="width: 50%; margin-left: 1%; margin-right: 1%;">
+                <!-- <i style="color: #0a0a0a;" class="fa-sharp fa-solid fa-plus"></i> -->
+              <p style="color: #000;">12332 Véhicule</p>
+              <!-- <p style="color: #999;">Utilisateur</p> -->
+            </div>
+            <div class="icon" style="background: #2A445D; width: 50%; margin-right: 1.5%; height: 90%; margin-left: 1%; border-radius: 10px;">
+                <!-- <p style="color: #ffffff;">250</p> -->
+                <i style="color: #ffffff;" class="fa-solid fa-truck-front"></i>
+            </div>
+          </div>
+
+        <!-- <div class="cardi">
           <div class="box">
             <h2 style="color: #000;">12332</h2>
             <h4 style="color: #999;">vehicule</h4>
@@ -10,36 +23,43 @@
           <div class="icon-case">
             <i style="color: #2A445D;" class="fa-solid fa-truck-front"></i>
           </div>
-        </div>
+        </div> -->
 
         <div class="cardi">
-          <div class="box">
-            <h2 style="color: #000;">12332</h2>
-            <h4 style="color: #999;">Infraction</h4>
+          <div class="box" style="width: 50%; margin-left: 1%; margin-right: 1%;">
+              <!-- <i style="color: #0a0a0a;" class="fa-sharp fa-solid fa-plus"></i> -->
+            <p style="color: #000;">12332 Infraction</p>
+            <!-- <p style="color: #999;">Utilisateur</p> -->
           </div>
-          <div class="icon-case">
-            <i style="color: #2A445D;" class="fa-solid fa-wallet"></i>
-          </div>
-        </div>
-
-
-        <div class="cardi">
-          <div class="box">
-            <h2 style="color: #000;">12332</h2>
-            <h4 style="color: #999;">Utilisateur</h4>
-          </div>
-          <div class="icon-case">
-            <i style="color: #2A445D;" class="fa-solid fa-user-tie"></i>
+          <div class="icon" style="background: #2A445D; width: 50%; margin-right: 1.5%; height: 90%; margin-left: 1%; border-radius: 10px;">
+              <!-- <p style="color: #ffffff;">250</p> -->
+              <i style="color: #ffffff;" class="fa-solid fa-wallet"></i>
           </div>
         </div>
 
+
         <div class="cardi">
-          <div class="box">
-            <h2 style="color: #000;">12332</h2>
-            <h4 style="color: #999;">Controleur</h4>
+          <div class="box" style="width: 50%; margin-left: 1%; margin-right: 1%;">
+              <!-- <i style="color: #0a0a0a;" class="fa-sharp fa-solid fa-plus"></i> -->
+            <p style="color: #000;">12332 Utilisateur</p>
+            <!-- <p style="color: #999;">Utilisateur</p> -->
           </div>
-          <div class="icon-case">
-            <i style="color: #2A445D;" class="fa-sharp fa-solid fa-user-secret"></i>
+          <div class="icon" style="background: #2A445D; width: 50%; margin-right: 1.5%; height: 90%; margin-left: 1%; border-radius: 10px;">
+              <!-- <p style="color: #ffffff;">250</p> -->
+              <i style="color: #ffffff;" class="fa-solid fa-user-tie"></i>
+          </div>
+        </div>
+
+
+        <div class="cardi">
+          <div class="box" style="width: 50%; margin-left: 1%; margin-right: 1%;">
+              <!-- <i style="color: #0a0a0a;" class="fa-sharp fa-solid fa-plus"></i> -->
+            <p style="color: #000;">12332 Controleur</p>
+            <!-- <p style="color: #999;">Utilisateur</p> -->
+          </div>
+          <div class="icon" style="background: #2A445D; width: 50%; margin-right: 1.5%; height: 90%; margin-left: 1%; border-radius: 10px;">
+              <!-- <p style="color: #ffffff;">250</p> -->
+              <i style="color: #ffffff;" class="fa-sharp fa-solid fa-user-secret"></i>
           </div>
         </div>
 
@@ -53,9 +73,9 @@
         <section class="attendance">
           <div class="attendance-list">
             <div class="haut">
-               <h1>Liste des controlleurs</h1>
+               <h1 style="margin-left: 10px;">Les admins</h1>
                <!-- <button>Ajouter Controlleur</button> -->
-               <button data-bs-toggle="modal" href="#exampleModal" data-bs-whatever="@getbootstrap" class="fa-sharp fa-solid fa-plus"></button>
+               <button style="margin-right: 10px;" class="btn btn-lg btn-outline-primary" (click)="open(content)" class="fa-sharp fa-solid fa-plus"></button>
               </div>
             
             <div class="tableliste">
@@ -65,11 +85,11 @@
                       <th>Profile</th>
                       <th>Nom</th>
                       <th>Prenom</th>
-                      <th>Grade</th>
+                      <th>Email</th>
                       <th>Adresse</th>
                       <th>Téléphone</th>
-                      <th>detaile</th>
-                      <th>Action</th>
+                      <!-- <th>detaile</th>
+                      <th>Action</th> -->
                     </tr>
                    </thead>
                    <tbody>
@@ -77,41 +97,41 @@
                       <td><img src="../../assets/logo.png" alt="" style="width: 50px; height: 50px; border-radius: 100%; border: 1px solid #2A445D;"></td>
                       <td class="td">ADIAWIAKOYE</td>
                       <td class="td">Ahmadou</td>
-                      <td class="td">Sergent</td>
+                      <td class="td">adiawiakoye.le10@gmail.com</td>
                       <td class="td">Yirimadio 1008 lgts</td>
                       <td class="td">+22375468913</td>
-                      <td class="td"><button>Voir plus</button></td>
-                      <td class="td"><i style="font-size: 25px; color: red;" class="fa-solid fa-trash"></i></td>
+                      <!-- <td class="td"><button>Voir plus</button></td>
+                      <td class="td"><i style="font-size: 25px; color: red;" class="fa-solid fa-trash"></i></td> -->
                     </tr>
                     <tr class="active">
                       <td><img src="../../assets/logo.png" alt="" style="width: 50px; height: 50px; border-radius: 100%; border: 1px solid #2A445D;"></td>
                       <td class="td">ADIAWIAKOYE</td>
                       <td class="td">Ahmadou</td>
-                      <td class="td">Sergent</td>
+                      <td class="td">adiawiakoye.le10@gmail.com</td>
                       <td class="td">Yirimadio 1008 lgts</td>
                       <td class="td">+22375468913</td>
-                      <td class="td"><button>Voir plus</button></td>
-                      <td class="td"><i style="font-size: 25px; color: red;" class="fa-solid fa-trash"></i></td>
+                      <!-- <td class="td"><button>Voir plus</button></td>
+                      <td class="td"><i style="font-size: 25px; color: red;" class="fa-solid fa-trash"></i></td> -->
                     </tr>
                     <tr>
                       <td><img src="../../assets/logo.png" alt="" style="width: 50px; height: 50px; border-radius: 100%; border: 1px solid #2A445D;"></td>
                       <td class="td">ADIAWIAKOYE</td>
                       <td class="td">Ahmadou</td>
-                      <td class="td">Sergent</td>
+                      <td class="td">adiawiakoye.le10@gmail.com</td>
                       <td class="td">Yirimadio 1008 lgts</td>
                       <td class="td">+22375468913</td>
-                      <td class="td"><button>Voir plus</button></td>
-                      <td class="td"><i style="font-size: 25px; color: red;" class="fa-solid fa-trash"></i></td>
+                      <!-- <td class="td"><button>Voir plus</button></td>
+                      <td class="td"><i style="font-size: 25px; color: red;" class="fa-solid fa-trash"></i></td> -->
                     </tr>
                     <tr>
                       <td><img src="../../assets/logo.png" alt="" style="width: 50px; height: 50px; border-radius: 100%; border: 1px solid #2A445D;"></td>
                       <td class="td">ADIAWIAKOYE</td>
                       <td class="td">Ahmadou</td>
-                      <td class="td">Sergent</td>
+                      <td class="td">adiawiakoye.le10@gmail.com</td>
                       <td class="td">Yirimadio 1008 lgts</td>
                       <td class="td">+22375468913</td>
-                      <td class="td"><button>Voir plus</button></td>
-                      <td class="td"><i style="font-size: 25px; color: red;" class="fa-solid fa-trash"></i></td>
+                      <!-- <td class="td"><button>Voir plus</button></td>
+                      <td class="td"><i style="font-size: 25px; color: red;" class="fa-solid fa-trash"></i></td> -->
                     </tr>
                    </tbody>
             </table>
@@ -156,5 +176,67 @@
     </div>
   </div>
 </div> -->
+
+
+<ng-template #content let-modal>
+	<div style="background: #2A445D;" class="modal-header">
+		<h4 style="color: #fff;" class="modal-title" id="modal-basic-title">Ajouter Controlleur</h4>
+		<button style="background: red; border-radius: 50%; color: #fff; font-size: 30px; border: none;" type="button" class="fa-solid fa-xmark"  (click)="modal.dismiss('Cross click')"></button>
+  
+  </div>
+	<div class="modal-body">
+		<form>
+      <div class="" style="display: flex; justify-content: space-between;">
+        <div class="form-group flex-column " > <label class="col-form-label" style="margin-left: 15px;">Nom :</label> <input type="text" class="form-control" id="code" > </div>
+        <div class="form-group flex-column "> <label class="col-form-label" style="margin-left: 15px;">Prenom :</label> <input type="text" class="form-control" id="nom" > </div>
+    </div>
+
+      <div class="mb-1">
+				<label style="margin-left: 15px;"  class="col-form-label">Adresse :</label>
+				<!-- <div  class="input-group"> -->
+					<input
+						type="text" class="form-control"
+					/>
+			</div>
+
+      <div class="mb-1">
+				<label style="margin-left: 15px;" class="col-form-label">Téléphone :</label>
+				<!-- <div  class="input-group"> -->
+					<input
+						type="phone" class="form-control"
+					/>
+			</div>
+
+      <div class="mb-1">
+				<label style="margin-left: 15px;"  class="col-form-label">Email :</label>
+				<!-- <div  class="input-group"> -->
+					<input
+						type="email" class="form-control"
+					/>
+			</div>
+
+      <div class="mb-1">
+				<label style="margin-left: 15px;"  class="col-form-label">Matricule :</label>
+				<!-- <div  class="input-group"> -->
+					<input
+						type="text" class="form-control"
+					/>
+			</div>
+
+      <!-- <div class="mb-1">
+				<label style="margin-left: 15px;" class="col-form-label">Prenom</label>
+				 <div  class="input-group">
+					<input
+						type="text" class="form-control"
+					/>
+			</div> -->
+
+        <div style="display: flex; justify-content: center;" class="modal-footer">
+            <button type="button">Envoyer</button>
+        </div>
+		</form>
+	</div>
+	
+</ng-template>
 
 

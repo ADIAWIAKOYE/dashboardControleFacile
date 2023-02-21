@@ -5,7 +5,7 @@
     &__box {
       min-height: 120px;
       background: #2A445D;
-      margin-left: 10px;
+      
       margin: 0 -1rem;
       font-size: 36px;
     }
@@ -28,10 +28,7 @@
   }
   .contt{
     position: relative;
-    // margin-bottom: 25px;
     margin-top: -30px;
-    // min-height: 90vh;
-  //  background-color: red;
    width: 100%;
    text-align: center !important;
    justify-content: center;
@@ -45,29 +42,79 @@
     // border: 5px solid #7e8083;
   }
   .contt .cards .cardi{
-    width: 250px;
-    height: 100px;
-    background: white;
+    width: 200px;
+   // height: 100px;
+   margin-right: 8%;
+   margin-bottom: 2.5%;
+   background: white;
     margin: 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 15px;
-    border: 5px solid #7e8083;
-    box-shadow: 0 4px 8px 0 rgba(104, 104, 104, 0.2), 0 6px 20px 0 rgba(104, 104, 104, 0.19);
-  }
-  i {
-   font-size: 60px;
-  }
-  .haut button{
-    font-size: 60px;
-    border: none;
-    background: none;
-    color: #2A445D;
-  }
-  .box{
-    //  margin-top: -40px;
-    // margin-bottom: -40px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   border-radius: 10px;
+   // border: 5px solid #7e8083;
+   box-shadow: 0 4px 8px 0 rgba(104, 104, 104, 0.2), 0 6px 20px 0 rgba(104, 104, 104, 0.19);
+ }
+ .contt .cards .cardi .icon{
+   text-align: center;
+   padding-top: 3%;
+ }
+ .icon P {
+   
+  font-size: 35px;
+  font-weight: 500;
+ //    margin-left: auto;
+ //    margin-right: auto;
+ }
+ .box{
+      text-align: center;
+      height: 75%;
+ }
+ .box p{
+    margin-top: 10%;
+    font-size: 18px;
+    font-weight: 500;
+ }
+
+//  .contt .cards .cardi{
+//   width: 250px;
+//   height: 100px;
+//   background: white;
+//   margin: 10px 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   border-radius: 15px;
+//   border: 5px solid #7e8083;
+//   box-shadow: 0 4px 8px 0 rgba(104, 104, 104, 0.2), 0 6px 20px 0 rgba(104, 104, 104, 0.19);
+// }
+i {
+ font-size: 60px;
+}
+.haut button{
+  font-size: 60px;
+  border: none;
+  background: none;
+  color: #2A445D;
+}
+// .box{
+//   //  margin-top: -40px;
+//   // margin-bottom: -40px;
+// }
+
+
+  .modal-footer button{
+    width: 40%;
+// margin-bottom: 15%;
+ // background-color: #2A445D !important; /* Blue background */
+ background-color:#2A445D !important ;
+  border: none; /* Remove borders */
+  color: #FFFFFF; /* White text */
+  padding: 10px ; /* Some padding */
+  font-weight: 500;
+  font-size: 13px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 20px;
   }
 
   @media (max-width: 1060px) {
@@ -113,6 +160,7 @@ table thead tr{
   color: #fff;
   background: #2A445D;
   text-align: left;
+  padding: 12px 15px; 
   font-weight: bold;
 }
 .table th, .table td{
@@ -185,16 +233,18 @@ table thead tr{
       padding: 0 0 10px;
   }
 
-  .table thead, .table tbody, .table thead th {
-    display: block;
-}
+// .table thead, .table tbody, .table thead th {
+//     // display: block;
+//     overflow-x: auto;
+// }
 .table thead th:last-child{
     border-bottom: none;
 }
-.table thead {
-    float: left;
-}
-.table tbody {
+// .table thead {
+//     float: left;
+    
+// }
+.table  {
     width: auto;
     position: relative;
     overflow-x: auto;

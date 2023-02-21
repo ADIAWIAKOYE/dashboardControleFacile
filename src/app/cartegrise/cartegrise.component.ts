@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  
-  selector: 'app-acceuil',
-  templateUrl: './acceuil.component.html',
- 
-  styleUrls: ['./acceuil.component.scss']
-
-  
-  
+  selector: 'app-cartegrise',
+  templateUrl: './cartegrise.component.html',
+  styleUrls: ['./cartegrise.component.scss']
 })
-export class AcceuilComponent {
+export class CartegriseComponent {
+
+  back(): void {
+    window.history.back()
+  }
+
 
   closeResult!: string;
 
@@ -41,5 +41,5 @@ export class AcceuilComponent {
 			return `with: ${reason}`;
 		}
 	}
-}
 
+}

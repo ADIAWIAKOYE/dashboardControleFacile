@@ -1,17 +1,51 @@
 <div class="formulaire">
-    <form class="connexion">
+    <form class="connexion"       
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
+    novalidate>
 
         <h1 class="titre_formulaire">connexion</h1>
 
         <div class="div_formulaire">
-           <input type="text" class="form_input" placeholder="Téléphone">
+           <input type="tel" class="form_input"  
+           [(ngModel)]="form.telephone"
+           required  #telephone="ngModel" name="phone" placeholder="Téléphone">
            <label class="form_label">Téléphone</label>
         </div>
+        <div *ngIf="telephone.errors && f.submitted" class="invalid-feedback">
+            Username is required!
+          </div>
 
         <div class="div_formulaire">
-            <input type="text" class="form_input" placeholder="Mot de passe">
+            <input type="text" class="form_input"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password="ngModel" name="password" placeholder="Password">
             <label class="form_label">Mot de passe</label>
          </div>
-         <input type="submit" routerLink="/acceuil" value="connexion" class="form_button">
+         <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+            <div *ngIf="password.errors['required']">Password is required</div>
+            <div *ngIf="password.errors['minlength']">
+              Password must be at least 6 characters
+            </div>
+          </div>
+
+          
+         <input type="submit" value="connexion" class="form_button">
+
+         <div class="form-group">
+            <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+              Login failed: {{ errorMessage }}
+            </div>
+          </div>
+
+          <div class="alert alert-success" *ngIf="isLoggedIn">
+            Logged in as {{ roles }}.
+          </div>
     </form>
+
+  
+
 </div>

@@ -1,0 +1,111 @@
+.page {
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    &__box {
+      min-height: 120px;
+      background: #2A445D;
+      margin: 0 -1rem;
+      font-size: 36px;
+    }
+    &__content {
+      min-height: calc(100vh - 178px);
+      scrollbar-width: none !important;
+      overflow-y: scroll; 
+      border-radius: 10px;
+      margin-top: -2rem;
+      background: white;
+      color: black;
+      font-size: 2rem;
+      &-data {
+        top: 10%;
+        left: 10%;
+        transform: translate(-10%, -10%);
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+
+  .form1{
+    // background-color: #18181a;
+    // border: 1px solid #2A445D;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border-bottom: 1px solid #2A445D;
+  }
+  .form1 .title{
+      padding-left: 20px;
+      font-size: 20px;
+      font-weight: 500;
+      border-bottom: 1px solid #2A445D;
+  }
+  
+  .myform label {
+      display: block;
+      color: #18181a;
+      font-weight: 500;
+      font-size: .8rem;
+      margin-bottom: -5px;
+      margin-left: 15px;
+  }
+  
+  .myform input {
+      border: 0;
+      outline: 0;
+      height: 40px;
+      // background: #e1dfdf;
+      width: 100%;
+      border-radius: 5px;
+      color: #000;
+      font-weight: 500;
+      font-size: .9rem;
+      text-indent: 15px;
+      border: 1px solid #2A445D;
+      transition: border 250ms;
+  }
+  
+  .full-width {
+      grid-column: -1 / 1
+  }
+  
+  .button {
+      // grid-column: -1 / 1;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .button button {
+      // border: 0;
+      // outline: 0;
+      // width: 120px;
+      // height: 50px;
+      // border-radius: 50px;
+      // color: #FFF;
+      // font-weight: bold;
+      // font-size: .9rem;
+      // cursor: pointer;
+      // background: linear-gradient(356deg, rgba(57, 50, 173, 1) 0%, rgba(87, 50, 173, 1) 100%);
+  
+      // text-transform: uppercase;
+      width: 150px;
+      height: 40px;
+       border-radius: 10px;
+      font-size: 16px;
+      line-height: 35px;
+      text-align: center;
+      border: 3px solid #2A445D;
+      display: block;
+      text-decoration: none;
+        // margin: 30px auto 1px auto;
+        margin-bottom: 20px;
+      color: #fff;
+      overflow: hidden;        
+      position: relative;
+      background-color: #2A445D;
+  
+  
+  }
+  

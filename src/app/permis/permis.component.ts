@@ -1,23 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  
-  selector: 'app-acceuil',
-  templateUrl: './acceuil.component.html',
- 
-  styleUrls: ['./acceuil.component.scss']
-
-  
-  
+  selector: 'app-permis',
+  templateUrl: './permis.component.html',
+  styleUrls: ['./permis.component.scss']
 })
-export class AcceuilComponent {
+export class PermisComponent {
 
   closeResult!: string;
 
-  // acceuil : acceuil[];
-
+  back(): void {
+    window.history.back()
+  }
+ 
   constructor(private httpclient : HttpClient,private modalService: NgbModal) {}
 
 
@@ -42,4 +39,3 @@ export class AcceuilComponent {
 		}
 	}
 }
-

@@ -17,9 +17,200 @@
       color: black;
       font-size: 2rem;
       &-data {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 10%;
+        left: 10%;
+        transform: translate(-10%, -10%);
       }
     }
+  }
+
+  .head{
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .search{
+    margin-top: 1%;
+    border-radius: 10px;
+    font-size: 15px;
+     padding: 5px 15px;
+    margin-left: 5%;
+    margin-bottom: 4%;
+     width: 30%; 
+    //  height: 80%;
+}
+
+.cardi{
+     width: 200px;
+    // height: 100px;
+    margin-right: 8%;
+    margin-bottom: 3%;
+    background: white;
+    // margin: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    // border: 5px solid #7e8083;
+    box-shadow: 0 4px 8px 0 rgba(104, 104, 104, 0.2), 0 6px 20px 0 rgba(104, 104, 104, 0.19);
+  }
+  .icon{
+    text-align: center;
+    padding-top: 3%;
+  }
+  i {
+    
+   font-size: 40px;
+//    margin-left: auto;
+//    margin-right: auto;
+  }
+  .box{
+       text-align: center;
+       height: 75%;
+  }
+  .box p{
+     font-size: 18px;
+     font-weight: 500;
+  }
+
+
+  .attendance{
+    margin-top: 20px;
+    text-transform: capitalize;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    // background-color: #2A445D;
+  }
+  .attendance-list{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1); 
+  }
+  .table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+  }
+  table thead tr{
+    color: #fff;
+    background: #2A445D;
+    text-align: left;
+    padding: 12px 15px; 
+    font-weight: bold;
+  }
+  .table th, .table td{
+    padding: 12px 15px; 
+   
+  }
+  .td{
+      // margin: auto;
+      vertical-align: middle;
+  }
+  .table tbody tr{
+    border-bottom: 1px solid #ddd;
+  }
+  .table tbody tr:nth-last-of-type(even){
+    background: #f3f3f3;
+  }
+  .table tbody tr.active{
+    font-weight: bold;
+    color: #2A445D;
+  }
+  .table tbody tr:last-of-type{
+    border-bottom: 2px solid #2A445D;
+  }
+  .table button{
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #2A445D;
+  }
+  .table button:hover{
+    background: #2A445D;
+    color: #fff;
+    transition: 0.5rem;
+  }
+  .haut{
+    display: flex;
+    justify-content: space-between;
+    // background: greenyellow;
+  }
+ .haut .search{
+    border-radius: 15px;
+    font-size: 15px;
+    padding: 5px 15px;
+    margin-right: 5%;
+    width: 30%;
+   
+}
+  .haut button{
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    background: #2A445D;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+  }
+  // .haut button:hover{
+  //   background: #2A445D;
+  //   color: #fff;
+  //   transition: 0.5rem;
+  // }
+  
+  .modal-footer button{
+    width: 40%;
+// margin-bottom: 15%;
+ // background-color: #2A445D !important; /* Blue background */
+ background-color:#2A445D !important ;
+  border: none; /* Remove borders */
+  color: #FFFFFF; /* White text */
+  padding: 10px ; /* Some padding */
+  font-weight: 500;
+  font-size: 13px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 20px;
+  }
+  
+  
+  @media (max-width: 880px) {
+    .table {
+        display: block;
+        width: 100%;
+    }
+    .tableliste:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+  
+  // .table thead, .table tbody, .table thead th {
+  //     // display: block;
+  //     overflow-x: auto;
+  // }
+  .table thead th:last-child{
+      border-bottom: none;
+  }
+  // .table thead {
+  //     float: left;
+      
+  // }
+  .table  {
+      width: auto;
+      position: relative;
+      overflow-x: auto;
+  }
   }

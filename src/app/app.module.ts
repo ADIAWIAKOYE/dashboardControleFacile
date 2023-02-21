@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +10,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderComponent } from './header/header.component';
 
 
-import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,8 +19,17 @@ import { MatListModule } from '@angular/material/list';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-// import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { VehiculeComponent } from './vehicule/vehicule.component';
+import { InfractionComponent } from './infraction/infraction.component';
+import { PlusvehiculeComponent } from './plusvehicule/plusvehicule.component';
+import { DetailutilComponent } from './detailutil/detailutil.component';
+import { AjoutervehiculeComponent } from './ajoutervehicule/ajoutervehicule.component';
+import { PermisComponent } from './permis/permis.component';
+import { CartegriseComponent } from './cartegrise/cartegrise.component';
+// import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,15 +38,26 @@ import { FormsModule } from '@angular/forms';
     SidenavComponent,
     HeaderComponent,
     ConnexionComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    UtilisateurComponent,
+    VehiculeComponent,
+    InfractionComponent,
+    PlusvehiculeComponent,
+    DetailutilComponent,
+    AjoutervehiculeComponent,
+    PermisComponent,
+    CartegriseComponent
+    // AppRoutingModule
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
-
+   FormsModule,
+    
+    ReactiveFormsModule,
+    
      // * MATERIAL IMPORTS
      MatSidenavModule,
      MatToolbarModule,
@@ -47,6 +67,7 @@ import { FormsModule } from '@angular/forms';
      MatListModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
