@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NbrtotalService } from '../services/nbrtotal.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   
@@ -12,13 +14,15 @@ import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstra
   
   
 })
-export class AcceuilComponent {
+export class AcceuilComponent implements OnInit {
 
   closeResult!: string;
+	roles: any;
+	vehiculenbr: any;
 
   // acceuil : acceuil[];
 
-  constructor(private httpclient : HttpClient,private modalService: NgbModal) {}
+  constructor(private httpclient : HttpClient,private modalService: NgbModal, private nbrtotalservice: NbrtotalService, private storageService: StorageService) {}
 
 
   open(content: any) {
@@ -41,5 +45,21 @@ export class AcceuilComponent {
 			return `with: ${reason}`;
 		}
 	}
+
+
+	ngOnInit(): void {
+		if (this.storageService.isLoggedIn()) {
+		  this.roles = this.storageService.getUser().roles;
+		}
+
+		this.Nbrvehicle();
+	  }
+
+	  Nbrvehicle(){
+		this.nbrtotalservice.getnbrvehicule().subscribe(data=>{
+			this.vehiculenbr=data;
+			// this.desciption= this.infraction.desciption;
+		  });
+	  }
 }
 
