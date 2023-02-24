@@ -2,7 +2,7 @@
     <div class="d-flex page__box p-3 mt-2" style="display: flex;">
         <i (click)=" back()" class="fa-solid fa-reply"></i>
     <div class="hd">
-        <input class="search" type="search"  placeholder="Rechercher" >
+        <input class="search" type="search"   placeholder="Rechercher" [(ngModel)]="filterTerm" show-clear-button = "focus" >
 
         <div class="cardi">
             <div class="box" style="width: 50%; margin-left: 1%; margin-right: 1%;">
@@ -20,8 +20,11 @@
     <div class="page__content shadow p-3 position-relative">
       <div class="page__content-data position-absolute " style="width: 100%;">
 
-        <div class="row" style="width: 94% !important; margin-left: auto; margin-right: auto; margin-top: 2%; display: flex; justify-content: space-between; margin-bottom: 2%;">
-            <div class=" col-md-6 cartegrise">
+        <div class="row" style="width: 94% !important; margin-left: auto; margin-right: auto; margin-top: 3%; display: flex; justify-content: space-between; margin-bottom: 2%;"
+        >
+
+        
+            <div class=" col-md-6 cartegrise" *ngFor="let cart of carte  | filter: filterTerm | paginate: { itemsPerPage: 2, currentPage: p }">
 
 
 
@@ -52,8 +55,8 @@
                             <!-- &nbsp;  -->
                           <div class="ite">
                             <div class="info-ite">
-                              <p class="yr"> <span>ADIAWIAKOYE </span> <span class="ren"> Ahmadou</span></p>
-                              <p class="yre" >N° Permis : <span>0012ZAE</span></p>
+                              <p class="yr"> <span>{{cart.nom}} </span> <span class="ren"> {{cart.prenom}}</span></p>
+                              <p class="yre" >N° Permis : <span>{{cart.utilisateur.permis.numpermis}}</span></p>
                             </div>
                             <!-- <div class="info-item"> -->
                               <!-- <p>N° Permis : <span>Ahmadou</span></p> -->
@@ -61,6 +64,155 @@
                             <!-- <div class="info-item">
                               <p>Né lé : <span> 10 / 10 / 1999 à Diré</span></p>
                             </div> -->
+                        </div>
+                    </div>
+                    
+                    <div class="prow">
+                     
+                      <div class="infoitem">
+                        <div class="info-tem">
+                            <p>Numéro de la carte grise : <span>{{cart.numcartegrise}}</span></p>
+                          </div>
+                          <div class="info-tem">
+                            <p>Valable du <span>{{cart.datedelivrance}} </span> au <span> {{cart.dateecheance}}</span></p>
+                          </div>
+                      </div>
+                          
+                      <div class="iteminfo">
+                        <div class="info-itemt" style="margin-left: 5%;">
+                            <p>Marque : <span>{{cart.marque}} </span></p>
+                          </div>
+                           <!-- &nbsp;
+                           &nbsp; -->
+                           <div class="info-itemr">
+                            <p>Genre :  <span>{{cart.genre}}</span></p>
+                          </div>
+                          <!-- &nbsp;
+                          &nbsp; -->
+                          <div class="info-itemr">
+                            <p>Type :  <span>{{cart.type}}</span></p>
+                          </div>
+                      </div>
+                          
+                        <div class="info">
+                           <div class="info1">
+                            <p>Couleur : <br> <span>{{cart.vehicule.couleur}}</span></p>
+                          </div>
+                          &nbsp;
+                          &nbsp;
+                          <div class="info2">
+                            <p>Energie : <br> <span>{{cart.energie}}</span></p>
+                          </div>
+                          &nbsp;
+                          &nbsp;
+                          <div class="info3">
+                            <p>Carrosserie : <br> <span>{{cart.carrouserie}}</span></p>
+                          </div>
+                        </div>
+                  
+                  
+                  
+                        <div class="info">
+                          <div class="info1">
+                           <p>Plasses <br>assises : <span>{{cart.nbplace}}</span></p>
+                         </div>
+                         &nbsp;
+                         &nbsp;
+                         <div class="info2">
+                           <p>Puissences <br> reél CV : <span>{{cart.puissancereel}}</span></p>
+                         </div>
+                         &nbsp;
+                         &nbsp;
+                         <div class="info3">
+                           <p>Puissences  <br>admin CV : <span>{{cart.puissanceadmin}}</span></p>
+                         </div>
+                       </div>
+                  
+                  
+                  
+                       <div class="infof">
+                        <div class="info1">
+                         <p>P.T.A.C :<br> <span>{{cart.ptac}}</span></p>
+                       </div>
+                       &nbsp;
+                       &nbsp;
+                       <div class="info2">
+                         <p>P V : <br> <span>{{cart.pv}}</span></p>
+                       </div>
+                       &nbsp;
+                       &nbsp;
+                       <div class="info3">
+                         <p>C U : <br> <span>{{cart.coutunitaire}}</span></p>
+                       </div>
+                     </div>
+                         
+                  
+                     <div class="infoit">
+                      <div class="info-tem">
+                          <p>Numero de Série / Chassis : <span>{{cart.chassie}}</span></p>
+                        </div>
+                        <div class="info-tem">
+                          <p>Numéro d’immatriculation : <span>{{cart.vehicule.plaqueimatri}}</span></p>
+                        </div>
+                        <div class="info-tem">
+                          <p>Date de mise en circulation : <span>{{cart.dpmc}}</span></p>
+                        </div>
+                    </div>
+                  
+                    <div class="m">
+                      <h3>{{cart.status}}</h3>
+                    </div>
+                    </div>
+                    
+                    <!-- <div class="desc">
+                      <p>Véhicules automobiles de moins de 10 places et dont 
+                        le poids tout autorisé en charge excède 3500 kg</p>
+                    </div> -->
+                    
+                    <!-- </div> -->
+
+
+
+            </div>   
+
+
+
+
+            <!-- <div class=" col-md-6 cartegrise">
+
+
+
+              
+  
+                    <div class="entete">
+                      <div class="cone">
+                        <img class="image" src="../../assets/symboles.png" alt=""/>
+                      </div>
+                     
+                      <div class="ministre">
+                         <p>République du Mali
+                          Ministre des transports</p>
+                      </div>
+                      <div class="cone">
+                         <img class="image" src="../../assets/Mali.png" alt=""/>
+                      </div>
+                    </div>
+                    <div class="mis">
+                      <p>Carte Grise Malienne</p>
+                    </div>
+                    <div class="ete">
+                          <div class="coneg">
+                            <p>Propriétaire : </p>
+                          </div>
+                            &nbsp; 
+                            &nbsp; 
+                       
+                          <div class="ite">
+                            <div class="info-ite">
+                              <p class="yr"> <span>ADIAWIAKOYE </span> <span class="ren"> Ahmadou</span></p>
+                              <p class="yre" >N° Permis : <span>0012ZAE</span></p>
+                            </div>
+                         
                         </div>
                     </div>
                     
@@ -79,13 +231,11 @@
                         <div class="info-itemt" style="margin-left: 5%;">
                             <p>Marque : <span>TOYOTA </span></p>
                           </div>
-                           <!-- &nbsp;
-                           &nbsp; -->
+                         
                            <div class="info-itemr">
                             <p>Genre :  <span>M3</span></p>
                           </div>
-                          <!-- &nbsp;
-                          &nbsp; -->
+                         
                           <div class="info-itemr">
                             <p>Type :  <span>VP</span></p>
                           </div>
@@ -159,7 +309,7 @@
                     <div class="m">
                       <h3>Valider</h3>
                     </div>
-                    </div>
+                    </div> -->
                     
                     <!-- <div class="desc">
                       <p>Véhicules automobiles de moins de 10 places et dont 
@@ -170,166 +320,15 @@
 
 
 
-            </div>   
-
-
-
-
-            <div class=" col-md-6 cartegrise">
-
-
-
-                <!-- <div class="card"> -->
-  
-                    <div class="entete">
-                      <div class="cone">
-                        <img class="image" src="../../assets/symboles.png" alt=""/>
-                      </div>
-                     
-                      <div class="ministre">
-                         <p>République du Mali
-                          Ministre des transports</p>
-                      </div>
-                      <div class="cone">
-                         <img class="image" src="../../assets/Mali.png" alt=""/>
-                      </div>
-                    </div>
-                    <div class="mis">
-                      <p>Carte Grise Malienne</p>
-                    </div>
-                    <div class="ete">
-                          <div class="coneg">
-                            <p>Propriétaire : </p>
-                          </div>
-                            &nbsp; 
-                            &nbsp; 
-                            <!-- &nbsp;  -->
-                          <div class="ite">
-                            <div class="info-ite">
-                              <p class="yr"> <span>ADIAWIAKOYE </span> <span class="ren"> Ahmadou</span></p>
-                              <p class="yre" >N° Permis : <span>0012ZAE</span></p>
-                            </div>
-                            <!-- <div class="info-item"> -->
-                              <!-- <p>N° Permis : <span>Ahmadou</span></p> -->
-                            <!-- </div> -->
-                            <!-- <div class="info-item">
-                              <p>Né lé : <span> 10 / 10 / 1999 à Diré</span></p>
-                            </div> -->
-                        </div>
-                    </div>
-                    
-                    <div class="prow">
-                     
-                      <div class="infoitem">
-                        <div class="info-tem">
-                            <p>Numéro de la carte grise : <span>AEDADZFCDFF</span></p>
-                          </div>
-                          <div class="info-tem">
-                            <p>Valable du <span>10/10/2021 </span> au <span> 10/10/2021</span></p>
-                          </div>
-                      </div>
-                          
-                      <div class="iteminfo">
-                        <div class="info-itemt" style="margin-left: 5%;">
-                            <p>Marque : <span>TOYOTA </span></p>
-                          </div>
-                           <!-- &nbsp;
-                           &nbsp; -->
-                           <div class="info-itemr">
-                            <p>Genre :  <span>M3</span></p>
-                          </div>
-                          <!-- &nbsp;
-                          &nbsp; -->
-                          <div class="info-itemr">
-                            <p>Type :  <span>VP</span></p>
-                          </div>
-                      </div>
-                          
-                        <div class="info">
-                           <div class="info1">
-                            <p>Couleur : <br> <span>NOIR</span></p>
-                          </div>
-                          &nbsp;
-                          &nbsp;
-                          <div class="info2">
-                            <p>Energie : <br> <span>ESSENCE</span></p>
-                          </div>
-                          &nbsp;
-                          &nbsp;
-                          <div class="info3">
-                            <p>Carrosserie : <br> <span>carrouserii</span></p>
-                          </div>
-                        </div>
-                  
-                  
-                  
-                        <div class="info">
-                          <div class="info1">
-                           <p>Plasses <br>assises : <span>7</span></p>
-                         </div>
-                         &nbsp;
-                         &nbsp;
-                         <div class="info2">
-                           <p>Puissences <br> reél CV : <span>10</span></p>
-                         </div>
-                         &nbsp;
-                         &nbsp;
-                         <div class="info3">
-                           <p>Puissences  <br>admin CV : <span>17</span></p>
-                         </div>
-                       </div>
-                  
-                  
-                  
-                       <div class="infof">
-                        <div class="info1">
-                         <p>P.T.A.C :<br> <span>07</span></p>
-                       </div>
-                       &nbsp;
-                       &nbsp;
-                       <div class="info2">
-                         <p>P V : <br> <span>07</span></p>
-                       </div>
-                       &nbsp;
-                       &nbsp;
-                       <div class="info3">
-                         <p>C U : <br> <span>500</span></p>
-                       </div>
-                     </div>
-                         
-                  
-                     <div class="infoit">
-                      <div class="info-tem">
-                          <p>Numero de Série / Chassis : <span>JUGUFUHBIIHVYFRXRFYUIHUIB</span></p>
-                        </div>
-                        <div class="info-tem">
-                          <p>Numéro d’immatriculation : <span>ZE 1232 MD</span></p>
-                        </div>
-                        <div class="info-tem">
-                          <p>Date de mise en circulation : <span>10/10/2021</span></p>
-                        </div>
-                    </div>
-                  
-                    <div class="m">
-                      <h3>Valider</h3>
-                    </div>
-                    </div>
-                    
-                    <!-- <div class="desc">
-                      <p>Véhicules automobiles de moins de 10 places et dont 
-                        le poids tout autorisé en charge excède 3500 kg</p>
-                    </div> -->
-                    
-                    <!-- </div> -->
-
-
-
-            </div>   
+            <!-- </div>    -->
 
 
 
 
         </div>
+        <div class="pagination" style="width: 100%; display: flex; justify-content: center;">
+          <pagination-controls style="font-size: 13px;" (pageChange)="p = $event" previousLabel="précédent" nextLabel="suivant"></pagination-controls>
+       </div>
     </div>
 </div>
 </div>

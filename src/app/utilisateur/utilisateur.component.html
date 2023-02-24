@@ -1,7 +1,7 @@
 <div class="container-fluid page">
     <div class="d-flex page__box p-3 mt-2" style="display: flex; justify-content: space-between;">
 
-        <input class="search" type="search"  placeholder="Rechercher" >
+        <input class="search" type="search" placeholder="Rechercher" [(ngModel)]="filterTerm" show-clear-button = "focus" >
   
         <div class="cardi">
             <div class="box" style="width: 50%; margin-left: 1%; margin-right: 1%;">
@@ -10,7 +10,7 @@
               <!-- <p style="color: #999;">Utilisateur</p> -->
             </div>
             <div class="icon" style="background: #2A445D; width: 50%; margin-right: 1.5%; height: 90%; margin-left: 1%; border-radius: 10px;">
-                <p style="color: #ffffff;">250</p>
+                <p style="color: #ffffff;">{{utilisateurnbr}}</p>
             </div>
           </div>
         </div>
@@ -34,28 +34,28 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let liste of listeutilisateur | filter: filterTerm  | paginate: { itemsPerPage: 4, currentPage: p }">
                      <td class="people">
-                    <img src="../../assets/logo.png" alt="">
+                    <img src="{{liste.profile}}" alt="">
                     <div class="people-de">
-                        <h5><span>John </span> <span> Doe</span></h5>
-                        <p>+22375468913</p>
+                        <h5><span>{{liste.prenom}} </span> <span> {{liste.nom}}</span></h5>
+                        <p>{{liste.telephone}}</p>
                     </div>
                 </td>
                 <td class="people-des">
-                  <h5>Software Engineer</h5>
+                  <h5>{{liste.profession}}</h5>
                   <!-- <p>web dev</p> -->
                 </td>
 
                 <td class="role">
-                    <p>Owner</p>
+                    <p>{{liste.domicile}}</p>
                 </td>
-                <td class="active"><p>Active</p></td>
+                <td class="active"><p>{{liste.etat}}</p></td>
 
-                <td class="edit"><a routerLink="/principal/detailutil">Voir plus</a></td>
+                <td class="edit"><a [routerLink]="['/principal/detailutil', liste.idappuser]">Voir plus</a></td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <td class="people">
                    <img src="../../assets/logo.png" alt="">
                    <div class="people-de">
@@ -65,17 +65,20 @@
                </td>
                <td class="people-des">
                  <h5>Software Engineer</h5>
-                 <!-- <p>web dev</p> -->
+                 <p>web dev</p>
                </td>
                <td class="role">
                 <p>Owner</p>
             </td>
                <td class="active"><p>Active</p></td>
                <td class="edit"><a routerLink="/principal/detailutil">Voir plus</a></td>
-               </tr>
+               </tr> -->
                
             </tbody>
         </table>
+        <div class="pagination" style="width: 100%; display: flex; justify-content: center;">
+          <pagination-controls style="font-size: 13px; color: #000;" (pageChange)="p = $event" previousLabel="précédent" nextLabel="suivant"></pagination-controls>
+       </div>
        </div>
 
 

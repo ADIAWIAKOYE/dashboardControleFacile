@@ -28,10 +28,10 @@ const routes: Routes = [
     { path: 'vehicule', component: VehiculeComponent },
     { path: 'infraction', component: InfractionComponent },
     { path: 'plusvehicule', component: PlusvehiculeComponent },
-    { path: 'detailutil', component: DetailutilComponent },
-    { path: 'ajoutervehicule', component: AjoutervehiculeComponent },
+    { path: 'detailutil/:idappuser', component: DetailutilComponent },
+    { path: 'ajoutervehicule/:idappuser', component: AjoutervehiculeComponent },
     { path: 'permis', component: PermisComponent },
-    { path: 'cartegrise', component: CartegriseComponent },
+    { path: 'cartegrise/:idappuser/:idvehicule', component: CartegriseComponent },
     { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
     { path: '**', redirectTo: 'acceuil', pathMatch: 'full' },
   ]

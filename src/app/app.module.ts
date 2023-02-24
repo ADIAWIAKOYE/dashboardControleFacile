@@ -29,6 +29,10 @@ import { DetailutilComponent } from './detailutil/detailutil.component';
 import { AjoutervehiculeComponent } from './ajoutervehicule/ajoutervehicule.component';
 import { PermisComponent } from './permis/permis.component';
 import { CartegriseComponent } from './cartegrise/cartegrise.component';
+import { HttpRequestInterceptoService } from './services/http-request-intercepto.service';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 // import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
@@ -52,21 +56,23 @@ import { CartegriseComponent } from './cartegrise/cartegrise.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-     BrowserAnimationsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
-   FormsModule,
-    
+    FormsModule,
+   
     ReactiveFormsModule,
     
      // * MATERIAL IMPORTS
-     MatSidenavModule,
-     MatToolbarModule,
-     MatMenuModule,
-     MatIconModule,
-     MatDividerModule,
-     MatListModule
+    MatSidenavModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatDividerModule,
+    MatListModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
-  providers: [],
+  providers: [HttpRequestInterceptoService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

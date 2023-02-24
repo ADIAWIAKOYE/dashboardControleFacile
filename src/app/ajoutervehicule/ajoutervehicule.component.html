@@ -13,7 +13,7 @@
                margin-bottom: 1.5%; 
             }
           </style>
-          <form action="#" class="myform" style="margin-top: 15px;">
+          <form action="#" class="myform" style="margin-top: 15px;" (ngSubmit)="PosteVehiculePourUtilisateur()">
             <div class="Row" style="width: 98% !important; margin-left: auto; margin-right: auto; display: flex; justify-content: space-between;">
   
               <div class="form1" style="width: 50% !important; margin-left: auto; margin-right: auto; margin-bottom: 10px;">
@@ -21,36 +21,36 @@
                 <div class="row" style="width: 98% !important; margin-left: auto; margin-right: auto; margin-bottom: 10px;">
                <div class=" control-from  col-md-6 mesf">
                 <label for="lastname">N° Carte Grise *</label>
-                <input type="text" id="firstname" value="" required>
+                <input type="text" id="firstname" value="" required name="numcartegrise" [(ngModel)]="numcartegrise"> 
               </div>
               <div class="control-from col-md-6 mesf">
                 <label for="lastname">D P M C *</label>
-                <input type="date" id="lastname" value="" required>
+                <input type="text" id="lastname" value="" required name="dpmc" [(ngModel)]="dpmc">
               </div>  
               <div class="control-from col-md-6 mesf">
                 <label for="firstname">Date de délivrance *</label>
-                <input type="date" id="firstname" value="" required>
+                <input type="text" id="firstname" value="" required name="datedelivrance" [(ngModel)]="datedelivrance">
               </div>
   
               <div class="control-from col-md-6 mesf">
                 <label for="lastname">Date d'echéance *</label>
-                <input type="date" id="lastname" value="" required>
+                <input type="text" id="lastname" value="" required name="dateecheance" [(ngModel)]="dateecheance">
               </div>
               
               <div class="row" style="width: 100% !important; margin-left: auto; margin-right: auto;">
                 <div class="control-from col-md-4 mesf">
                  <label for="emailaddress">P T A C *</label>
-                 <input type="number" id="emailaddress" value="" required>
+                 <input type="number" id="emailaddress" value="" required name="ptac" [(ngModel)]="ptac">
                </div>
      
                <div class="control-from col-md-4 mesf">
                  <label for="emailaddress">P V *</label>
-                 <input type="number" id="emailaddress" value="" required>
+                 <input type="number" id="emailaddress" value="" required name="pv" [(ngModel)]="pv">
                </div>
                
                <div class="control-from col-md-4 mesf">
                 <label for="emailaddress">Energie *</label>
-                <input type="text" id="emailaddress" value="" required>
+                <input type="text" id="emailaddress" value="" required name="energie" [(ngModel)]="energie">
               </div>
                </div>
   
@@ -67,17 +67,17 @@
             <div class="row" style="width: 100% !important; margin-left: auto; margin-right: auto;">
                 <div class="control-from col-md-4 mesf">
                  <label for="emailaddress">Puissance reél *</label>
-                 <input type="number" id="emailaddress" value="" required>
+                 <input type="number" id="emailaddress" value="" required name="puissancereel" [(ngModel)]="puissancereel">
                </div>
      
                <div class="control-from col-md-4 mesf">
                  <label for="emailaddress">Puissance admin *</label>
-                 <input type="number" id="emailaddress" value="" required>
+                 <input type="number" id="emailaddress" value="" required name="puissanceadmin" [(ngModel)]="puissanceadmin">
                </div>
                
                <div class="control-from col-md-4 mesf">
                 <label for="emailaddress">Cout Unitaire *</label>
-                <input type="number" id="emailaddress" value="" required>
+                <input type="number" id="emailaddress" value="" required name="coutunitaire" [(ngModel)]="coutunitaire">
               </div>
                </div>
 
@@ -93,39 +93,39 @@
                  <div class="row" style="width: 98% !important; margin-left: auto; margin-right: auto; margin-bottom: 10px;">
                 <div class=" control-from  col-md-6 mesf">
                  <label >Immatriculation *</label>
-                 <input type="text" id="firstname" value="" required>
+                 <input type="text" id="firstname" value="" required name="plaqueimatri" [(ngModel)]="plaqueimatri">
                </div>
                <div class="control-from col-md-6 mesf">
                  <label for="lastname">Marque *</label>
-                 <input type="text" id="lastname" value="" required>
+                 <input type="text" id="lastname" value="" required name="marque" [(ngModel)]="marque">
                </div>  
                <div class="control-from col-md-6 mesf">
                  <label for="firstname">Chassie *</label>
-                 <input type="text" id="firstname" value="" required>
+                 <input type="text" id="firstname" value="" required name="chassie" [(ngModel)]="chassie">
                </div>
    
            
    
              <div class="control-from col-md-6 mesf">
                <label for="phonenumber">Type *</label>
-               <input type="text" id="phonenumber" value="" required>
+               <input type="text" id="phonenumber" value="" required name="type" [(ngModel)]="type">
              </div>
    
              <div class="row" style="width: 100% !important; margin-left: auto; margin-right: auto;">
   
               <div class="control-from col-md-4 mesf">
                 <label for="emailaddress">Couleur *</label>
-                <input type="text" id="emailaddress" value="" required>
+                <input type="text" id="emailaddress" value="" required name="couleur" [(ngModel)]="couleur">
               </div>
   
               <div class="control-from col-md-4 mesf">
                <label for="emailaddress">Genre *</label>
-               <input type="text" id="emailaddress" value="" required>
+               <input type="text" id="emailaddress" value="" required name="genre" [(ngModel)]="genre">
              </div>
    
              <div class="control-from col-md-4 mesf">
                <label for="emailaddress">Nombre de place *</label>
-               <input type="text" id="emailaddress" value="" required>
+               <input type="number" id="emailaddress" value="" required name="nbplace" [(ngModel)]="nbplace">
              </div>
   
            
@@ -133,12 +133,12 @@
   
                   <div class="control-from col-md-6 mesf">
                  <label for="lastname">Carrouserie *</label>
-                 <input type="text" id="lastname" value="" required>
+                 <input type="text" id="lastname" value="" required name="carrousserie" [(ngModel)]="carrouserie">
                </div>
                
              <div class="control-from col-md-6 mesf">
                <label for="emailaddress">Capacité *</label>
-               <input type="text" id="emailaddress" value="" required>
+               <input type="text" id="emailaddress" value="" required name="capacite" [(ngModel)]="capacite">
              </div>
              
                </div>
@@ -163,16 +163,16 @@
             <div class="row" style="width: 98% !important; margin-left: auto; margin-right: auto;">
               <div class="control-from col-md-4 mesf">
               <label for="phonenumber">Nom *</label>
-              <input type="text" id="phonenumber" value="" required>
+              <input type="text" id="phonenumber" value="" required name="nom" [(ngModel)]="nom">
             </div>
             <div class="control-from col-md-4 mesf">
               <label for="emailaddress">Prénom *</label>
-              <input type="text" id="emailaddress" value="" required>
+              <input type="text" id="emailaddress" value="" required name="prenom" [(ngModel)]="prenom">
             </div>
   
             <div class="control-from col-md-4 mesf">
               <label for="phonenumber">Profession *</label>
-              <input type="text" id="phonenumber" value="" required>
+              <input type="text" id="phonenumber" value="" required name="profession" [(ngModel)]="profession">
             </div>
   
             <!-- <div class="control-from col-md-3 mesf">
@@ -196,22 +196,22 @@
             </div> -->
             <div class="control-from col-md-3 mesf">
               <label for="emailaddress">Adresse *</label>
-              <input type="text" id="emailaddress" value="" required>
+              <input type="text" id="emailaddress" value="" required name="adresse" [(ngModel)]="adresse">
             </div>
   
             <div class="control-from col-md-3 mesf">
               <label for="phonenumber">Date de nassance *</label>
-              <input type="date" id="phonenumber" value="" required>
+              <input type="text" id="phonenumber" value="" required name="datenaissance" [(ngModel)]="datenaissance">
             </div>
   
             <div class="control-from col-md-3 mesf">
               <label for="emailaddress">Lieu de naissance *</label>
-              <input type="text" id="emailaddress" value="" required>
+              <input type="text" id="emailaddress" value="" required name="lieunaissance" [(ngModel)]="lieunaissance">
             </div>
   
             <div class="control-from col-md-3 mesf">
               <label for="phonenumber">Commune *</label>
-              <input type="text" id="phonenumber" value="" required>
+              <input type="text" id="phonenumber" value="" required name="commune" [(ngModel)]="commune">
             </div>
   
             </div>
@@ -221,7 +221,7 @@
   
   
             <div class="button">
-              <button id="register">Envoyer</button>
+              <button id="register" type="submit">Envoyer</button>
             </div>
   
           </form>

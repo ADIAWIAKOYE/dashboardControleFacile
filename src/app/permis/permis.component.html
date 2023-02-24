@@ -2,7 +2,7 @@
  <div class=" page__box p-3 mt-2" style="display: flex; justify-content: space-between;"> 
     <!-- <div class="head"> -->
         <!-- <p  style="margin-left: 5%;">Les permis de conduire</p> -->
-        <input class="search" type="search"  placeholder="Rechercher" >
+        <input class="search" type="search"  placeholder="Rechercher"  placeholder="Rechercher" [(ngModel)]="filterTerm" show-clear-button = "focus">
 
         <div class="cardi">
             <div class="box" style="width: 50%; margin-left: 1%; margin-right: 1%;">
@@ -20,9 +20,77 @@
     <div class="page__content shadow p-3 position-relative">
       <div class="page__content-data position-absolute " style="width: 100%;">
         
-        <div class="row" style="width: 94% !important; margin-left: auto; margin-right: auto; margin-top: 10px; display: flex; justify-content: space-between;">
+        <div class="row" style="width: 94% !important; margin-left: auto; margin-right: auto; margin-top: 2%; display: flex; justify-content: space-between;">
 
-            <div class=" col-md-6 permis">
+            <div class=" col-md-6 permis" *ngFor="let permi of permis  | filter: filterTerm  | paginate: { itemsPerPage: 2, currentPage: p }">
+
+                <div class="entete">
+                    <div class="cone">
+                      <img class="image" src="../../assets/symboles.png" alt=""/>
+                    </div>
+                   
+                    <div class="ministre">
+                       <p>République du Mali
+                        Ministre des transports</p>
+                    </div>
+                    <div class="cone">
+                       <img class="image" src="../../assets/Mali.png" alt=""/>
+                    </div>
+                  </div>
+                  <div class="mis">
+                    <p>Permis de Conduire Malien</p>
+                  </div>
+                  <div class="ete">
+                        <div class="coneg">
+                          <img class="image" src="{{permi.profilepermis}}" alt=""/>
+                        </div>
+                         &nbsp;
+                        <div class="item">
+                          <div class="info-item">
+                            <p>Nom : <span>{{permi.nom}}</span></p>
+                          </div>
+                          <div class="info-item">
+                            <p>Prenom : <span>{{permi.prenom}}</span></p>
+                          </div>
+                          <div class="info-item">
+                            <p>Né lé : <span>{{permi.datenaissance}}</span> à <span>{{permi.lieunaissance}}</span></p>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="prow">
+                  
+                        <div class="info-item">
+                          <p>Domicile : <span>{{permi.domicile}}</span></p>
+                        </div>
+                        <div class="info-item">
+                          <p>Profession : <span>{{permi.profession}}</span></p>
+                        </div>
+                        <div class="info-item">
+                          <p>N° Permis : <span>{{permi.numpermis}}</span></p>
+                        </div>
+                        <div class="info-item">
+                          <p>Délivre lé : <span>{{permi.datedelivrance}}  à  BAMAKO</span></p>
+                        </div>
+                        <div class="info-item">
+                          <p>date d’expiration : <span>{{permi.dateecheance}}</span></p>
+                        </div>
+                        <div class="info-item">
+                          <p>Catégorie du permis  : <span>{{permi.categoriepermis}}</span></p>
+                        </div>
+                  </div>
+                  
+                  <div class="desc">
+                    <p>Véhicules automobiles de moins de 10 places et dont 
+                      le poids tout autorisé en charge excède 3500 kg</p>
+                  </div>
+
+            </div>
+
+
+
+
+            <!-- <div class=" col-md-6 permis">
 
                 <div class="entete">
                     <div class="cone">
@@ -85,81 +153,15 @@
                       le poids tout autorisé en charge excède 3500 kg</p>
                   </div>
 
-            </div>
-
-
-
-
-            <div class=" col-md-6 permis">
-
-                <div class="entete">
-                    <div class="cone">
-                      <img class="image" src="../../assets/symboles.png" alt=""/>
-                    </div>
-                   
-                    <div class="ministre">
-                       <p>République du Mali
-                        Ministre des transports</p>
-                    </div>
-                    <div class="cone">
-                       <img class="image" src="../../assets/Mali.png" alt=""/>
-                    </div>
-                  </div>
-                  <div class="mis">
-                    <p>Permis de Conduire Malien</p>
-                  </div>
-                  <div class="ete">
-                        <div class="coneg">
-                          <img class="image" src="../../assets/One.jpg" alt=""/>
-                        </div>
-                         &nbsp;
-                        <div class="item">
-                          <div class="info-item">
-                            <p>Nom : <span>ADIAWIAKOYE</span></p>
-                          </div>
-                          <div class="info-item">
-                            <p>Prenom : <span>Ahmadou</span></p>
-                          </div>
-                          <div class="info-item">
-                            <p>Né lé : <span>10/10/1000</span> à <span>10/10/1000</span></p>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <div class="prow">
-                  
-                        <div class="info-item">
-                          <p>Domicile : <span>yirimadio 1008 lgts</span></p>
-                        </div>
-                        <div class="info-item">
-                          <p>Profession : <span>Etudiant</span></p>
-                        </div>
-                        <div class="info-item">
-                          <p>N° Permis : <span>00012321</span></p>
-                        </div>
-                        <div class="info-item">
-                          <p>Délivre lé : <span>20/12/2222  à  BAMAKO</span></p>
-                        </div>
-                        <div class="info-item">
-                          <p>date d’expiration : <span>20/12/2222</span></p>
-                        </div>
-                        <div class="info-item">
-                          <p>Catégorie du permis  : <span>B</span></p>
-                        </div>
-                  </div>
-                  
-                  <div class="desc">
-                    <p>Véhicules automobiles de moins de 10 places et dont 
-                      le poids tout autorisé en charge excède 3500 kg</p>
-                  </div>
-
-            </div>
+            </div> -->
 
 
 
 
 
-
+            <div class="pagination" style="width: 100%; display: flex; justify-content: center;">
+              <pagination-controls style="font-size: 13px; color: #000;" (pageChange)="p = $event" previousLabel="précédent" nextLabel="suivant"></pagination-controls>
+           </div>
 
         </div>
 
@@ -177,15 +179,37 @@
   
   </div>
 	<div class="modal-body">
-		<form>
+		<form (ngSubmit)="PosterPermis()">
       <div class="" style="display: flex; justify-content: space-between;">
-        <div class="form-group flex-column " > <label class="col-form-label" style="margin-left: 15px;">Nom :</label> <input type="text" class="form-control" id="code" > </div>
-        <div class="form-group flex-column "> <label class="col-form-label" style="margin-left: 15px;">Prenom :</label> <input type="text" class="form-control" id="nom" > </div>
+        <div class="form-group flex-column " > <label class="col-form-label" style="margin-left: 15px;">Nom :</label> <input type="text" class="form-control" name="nom" [(ngModel)]="nom"> </div>
+        <div class="form-group flex-column "> <label class="col-form-label" style="margin-left: 15px;">Prenom :</label> <input type="text" class="form-control" name="prenom" [(ngModel)]="prenom" > </div>
     </div>
 
-      <div class="mb-1">
+    <div class="" style="display: flex; justify-content: space-between;">
+      <div class="form-group flex-column " > <label class="col-form-label" style="margin-left: 15px;">Date de naissance :</label> <input type="text" class="form-control" name="datenaissance" [(ngModel)]="datenaissance" > </div>
+      <div class="form-group flex-column "> <label class="col-form-label" style="margin-left: 15px;">lieu de naissance :</label> <input type="text" class="form-control" name="lieunaissance" [(ngModel)]="lieunaissance" > </div>
+  </div>
+
+
+  <div class="" style="display: flex; justify-content: space-between;">
+    <div class="form-group flex-column " > <label class="col-form-label" style="margin-left: 15px;">Domicile :</label> <input type="text" class="form-control" name="adresse" [(ngModel)]="adresse" > </div>
+    <div class="form-group flex-column "> <label class="col-form-label" style="margin-left: 15px;">Profession :</label> <input type="text" class="form-control" name="profession" [(ngModel)]="profession" > </div>
+</div>
+
+<div class="" style="display: flex; justify-content: space-between;">
+  <div class="form-group flex-column " > <label class="col-form-label" style="margin-left: 15px;">N° Permis :</label> <input type="text" class="form-control" name="numpermis" [(ngModel)]="numpermis" > </div>
+  <div class="form-group flex-column "> <label class="col-form-label" style="margin-left: 15px;">Date delivrance :</label> <input type="text" class="form-control" name="datedelivrance" [(ngModel)]="datedelivrance" > </div>
+</div>
+
+
+<div class="" style="display: flex; justify-content: space-between;">
+  <div class="form-group flex-column " > <label class="col-form-label" style="margin-left: 15px;">Categorie une Permis :</label> <input type="text" class="form-control" name="categoriepermis" [(ngModel)]="categoriepermis" > </div>
+  <div class="form-group flex-column "> <label class="col-form-label" style="margin-left: 15px;">Date d'expiration :</label> <input type="text" class="form-control" name="dateecheance" [(ngModel)]="dateecheance" > </div>
+</div>
+
+      <!-- <div class="mb-1">
 				<label style="margin-left: 15px;"  class="col-form-label">Adresse :</label>
-				<!-- <div  class="input-group"> -->
+		
 					<input
 						type="text" class="form-control"
 					/>
@@ -193,25 +217,25 @@
 
       <div class="mb-1">
 				<label style="margin-left: 15px;" class="col-form-label">Téléphone :</label>
-				<!-- <div  class="input-group"> -->
+				
 					<input
 						type="phone" class="form-control"
 					/>
-			</div>
+			</div> -->
 
-      <div class="mb-1">
+      <!-- <div class="mb-1">
 				<label style="margin-left: 15px;"  class="col-form-label">Email :</label>
-				<!-- <div  class="input-group"> -->
+				
 					<input
 						type="email" class="form-control"
 					/>
-			</div>
+			</div> -->
 
       <div class="mb-1">
-				<label style="margin-left: 15px;"  class="col-form-label">Matricule :</label>
+				<label style="margin-left: 15px;"  class="col-form-label">la photo de profile :</label>
 				<!-- <div  class="input-group"> -->
 					<input
-						type="text" class="form-control"
+						type="file" class="form-control" (change)="fileChang($event)"
 					/>
 			</div>
 
@@ -224,7 +248,7 @@
 			</div> -->
 
         <div style="display: flex; justify-content: center;" class="modal-footer">
-            <button type="button">Envoyer</button>
+            <button type="submit">Envoyer</button>
         </div>
 		</form>
 	</div>

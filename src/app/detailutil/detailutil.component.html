@@ -25,18 +25,18 @@
                   </div>
                   <div class="ete">
                         <div class="coneg">
-                          <img class="image" src="../../assets/One.jpg" alt=""/>
+                          <img class="image" src="{{permiprofile}}" alt=""/>
                         </div>
                          &nbsp;
                         <div class="item">
                           <div class="info-item">
-                            <p>Nom : <span>ADIAWIAKOYE</span></p>
+                            <p>Nom : <span>{{perminom}}</span></p>
                           </div>
                           <div class="info-item">
-                            <p>Prenom : <span>Ahmadou</span></p>
+                            <p>Prenom : <span>{{permiprenom}}</span></p>
                           </div>
                           <div class="info-item">
-                            <p>Né lé : <span>10/10/1000</span> à <span>10/10/1000</span></p>
+                            <p>Né lé : <span>{{permidatenaissance}}</span> à <span>{{permilieunaissance}}</span></p>
                           </div>
                       </div>
                   </div>
@@ -44,22 +44,22 @@
                   <div class="prow">
                   
                         <div class="info-item">
-                          <p>Domicile : <span>yirimadio 1008 lgts</span></p>
+                          <p>Domicile : <span>{{permidomicile}} </span> </p>
                         </div>
                         <div class="info-item">
-                          <p>Profession : <span>Etudiant</span></p>
+                          <p>Profession : <span>{{permiprofession}}</span></p>
                         </div>
                         <div class="info-item">
-                          <p>N° Permis : <span>00012321</span></p>
+                          <p>N° Permis : <span>{{perminum}}</span></p>
                         </div>
                         <div class="info-item">
-                          <p>Délivre lé : <span>20/12/2222  à  BAMAKO</span></p>
+                          <p>Délivre lé : <span>{{permidatelivraison}}  à  BAMAKO</span></p>
                         </div>
                         <div class="info-item">
-                          <p>date d’expiration : <span>20/12/2222</span></p>
+                          <p>date d’expiration : <span>{{permidateecheance}}</span></p>
                         </div>
                         <div class="info-item">
-                          <p>Catégorie du permis  : <span>B</span></p>
+                          <p>Catégorie du permis  : <span>{{permicategorie}}</span></p>
                         </div>
                   </div>
                   
@@ -73,33 +73,36 @@
             <div class="vehicule">
                 <div class="header">
                     <p class="title"> La Liste des véhicules :</p> 
-                    <a routerLink = '/principal/ajoutervehicule'  class="ajou"><i class="fa-solid fa-plus"></i> Ajouter</a>
+                    <a [routerLink] ="['/principal/ajoutervehicule', id]" class="ajou"><i class="fa-solid fa-plus"></i> Ajouter</a>
                 </div>
 
                 <div class="body">
 
          <div class="item-padd">
-        <div class="vehic">
+          <!-- <div class="padd" *ngFor="let vehicle of vehicule; let i= index "> -->
+          <div class="padd" *ngFor="let vehicle of vehicule2">
+          <div class="vehic">
           <div class="inmage">
-               <img class="image" src="../../assets/Frame 128.png" alt=""/>
+               <img class="image" src="{{vehicle[2]}}" alt=""/>
           </div>
     
           <div class="info">
             <div class="inform">
-            <p><span> TOYOTA </span> <span> COROLLA </span> <span> XLI </span></p>
-            <p>Couleur : <span>Orange</span></p>
+              <!-- <p><span>{{vtre[i].marque}} </span><span> {{genr}} </span> <span> {{typ}}</span></p> -->
+              <p><span>{{vehicle[18]}} </span><span> {{vehicle[16]}} </span> <span> {{vehicle[30]}}</span></p>
+              <p>Couleur : <span>{{vehicle[1]}}</span></p>
           </div>
           <div class="buton">
-            <a routerLink = '/detailvehicule'  class="hire">AV 7223 MD</a>
+            <a routerLink = '/detailvehicule'  class="hire">{{vehicle[3]}}</a>
             &nbsp;
              &nbsp;
-            <a routerLink = '/principal/cartegrise' class="btn">Voir plus</a> 
+            <a [routerLink] = "['/principal/cartegrise', id, vehicle[0]]" class="btn">Voir plus</a> 
               </div>
           </div>
         </div>
 
 
-        <div class="vehic">
+        <!-- <div class="vehic">
             <div class="inmage">
                  <img class="image" src="../../assets/Frame 128.png" alt=""/>
             </div>
@@ -116,10 +119,10 @@
               <a routerLink = '/principal/cartegrise' class="btn">Voir plus</a>  
                 </div>
             </div>
-          </div>
+          </div> -->
 
 
-          <div class="vehic">
+          <!-- <div class="vehic">
             <div class="inmage">
                  <img class="image" src="../../assets/Frame 128.png" alt=""/>
             </div>
@@ -136,11 +139,11 @@
               <a routerLink = '/principal/cartegrise' class="btn">Voir plus</a>  
                 </div>
             </div>
-          </div>
+          </div> -->
 
 
 
-          <div class="vehic">
+          <!-- <div class="vehic">
             <div class="inmage">
                  <img class="image" src="../../assets/Frame 128.png" alt=""/>
             </div>
@@ -157,9 +160,9 @@
                <a routerLink = '/principal/cartegrise' class="btn">Voir plus</a> 
                 </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="vehic">
+          <!-- <div class="vehic">
             <div class="inmage">
                  <img class="image" src="../../assets/Frame 128.png" alt=""/>
             </div>
@@ -176,7 +179,9 @@
               <a routerLink = '/principal/cartegrise' class="btn">Voir plus</a> 
                 </div>
             </div>
+          </div> -->
           </div>
+
 
       </div>
 
